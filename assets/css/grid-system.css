@@ -5,16 +5,15 @@
     margin: 0;
     padding: 0;
 }
-:root {
-    --column-total: 12;
-}
+
 .container {
+    --column-total: 12;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     /* Gutter: 30px theo design */
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: calc(var(--column-space) / 2);
+    padding-right: calc(var(--column-space) / 2);
 }
 .container-fluid {
     width: 100%;
@@ -23,6 +22,8 @@
 .row {
     display: flex;
     flex-wrap: wrap;
+    margin-left: calc(-1 * var(--column-space) / 2);
+    margin-right: calc(-1 * var(--column-space) / 2);
 }
 /* Column */
 .col {
@@ -32,6 +33,8 @@
 .row > [class*="col-"] {
     flex: 0 0 auto;
     width: calc(100% / var(--column-total) * var(--column-number));
+    padding-left: calc(var(--column-space) / 2);
+    padding-right: calc(var(--column-space) / 2);
 }
 .col-1 {
     --column-number: 1;
@@ -74,6 +77,8 @@
 .row[class*="row-cols-"] > * {
     flex: 0 0 auto;
     width: calc(100% / var(--row-cols));
+    padding-left: calc(var(--column-space) / 2);
+    padding-right: calc(var(--column-space) / 2);
 }
 .row-cols-1 {
     --row-cols: 1;
@@ -93,8 +98,13 @@
 .row-cols-6 {
     --row-cols: 6;
 }
+/* Set gutter 0 */
+.g-0 {
+    --column-space: 0;
+}
 @media (min-width: 576px) {
     .container {
+        --column-space: 10px;
         max-width: 540px;
     }
     .col-sm-1 {
@@ -177,6 +187,8 @@
 }
 @media (min-width: 992px) {
     .container {
+        /* Gutter */
+        --column-space: 30px;
         max-width: 960px;
     }
     .col-lg-1 {
