@@ -102,6 +102,48 @@
 .g-0 {
     --column-space: 0;
 }
+/* ====Offset=== */
+/* Set margin-left: width of n columns */
+.row > [class*="col"] {
+    margin-left: calc(100% / var(--column-total) * var(--offset-number));
+}
+.offset-0 {
+    --offset-number: 0;
+}
+.offset-1 {
+    --offset-number: 1;
+}
+.offset-2 {
+    --offset-number: 2;
+}
+.offset-3 {
+    --offset-number: 3;
+}
+.offset-4 {
+    --offset-number: 4;
+}
+.offset-5 {
+    --offset-number: 5;
+}
+.offset-6 {
+    --offset-number: 6;
+}
+.offset-7 {
+    --offset-number: 7;
+}
+.offset-8 {
+    --offset-number: 8;
+}
+.offset-9 {
+    --offset-number: 9;
+}
+.offset-10 {
+    --offset-number: 10;
+}
+.offset-11 {
+    --offset-number: 11;
+}
+
 @media (min-width: 576px) {
     .container {
         --column-space: 10px;
