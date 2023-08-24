@@ -1,0 +1,53 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    /* Gutter: 30px theo design */
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.container-fluid {
+    width: 100%;
+}
+/* Row */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+/* Column */
+.col {
+    flex: 1 0;
+}
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1170px; /* Bootstrap: 1140px */
+    }
+}
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
